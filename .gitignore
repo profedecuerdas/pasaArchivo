@@ -1,0 +1,28 @@
+# ==========================================
+# .gitignore para Android Studio / PasaArchivo
+# ==========================================
+
+# 1. Archivos de compilación y binarios (¡Los más pesados!)
+build/
+*/build/
+app/build/
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+
+# 2. Cachés y configuración local de Android Studio / Gradle
+.gradle/
+.idea/
+*.iml
+local.properties
+/gradle.properties
+
+# 3. Archivos del Sistema Operativo
+.DS_Store
+Thumbs.db
+
+# 4. Seguridad (evitar subir llaves de firma por accidente en el futuro)
+*.jks
+*.keystore
