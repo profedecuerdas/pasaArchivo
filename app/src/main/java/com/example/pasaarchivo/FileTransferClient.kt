@@ -8,10 +8,9 @@ import java.io.InputStream
 import java.net.Socket
 import kotlin.concurrent.thread
 
-class FileTransferClient(private val context: Context) {
+class FileTransferClient(private val context: Context, private val serverIp: String) {
     private val TAG = "FileTransferClient"
-    private val SERVER_IP = "172.30.203.102" 
-    private val SEND_PORT = 9001
+    private val SEND_PORT = 9000
 
     fun sendFile(fileUri: Uri) {
         thread {
@@ -25,7 +24,7 @@ class FileTransferClient(private val context: Context) {
                     }
                 }
 
-                val socket = Socket(SERVER_IP, SEND_PORT)
+                val socket = Socket(serverIp, SEND_PORT)
                 val outputStream = socket.getOutputStream()
                 val inputStream: InputStream? = context.contentResolver.openInputStream(fileUri)
 

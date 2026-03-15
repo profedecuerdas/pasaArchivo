@@ -9,7 +9,7 @@ Ideal para transferir firmware (ESP32/Arduino), scripts de Python, audios o docu
 La aplicación funciona como una navaja suiza de doble vía, gestionada desde una interfaz que actúa como un **Panel de Control de Red**:
 
 * **Android recibe (Puerto 9000):** La app detecta y muestra su propia IP en pantalla. Un servidor TCP en segundo plano escucha silenciosamente. Al recibir un archivo desde Linux, lo guarda en la carpeta pública de **Descargas** y emite un Toast.
-* **Android envía (Puerto 9001):** La app cuenta con un campo de texto que recuerda la última IP de tu máquina Linux (usando `SharedPreferences`). Al seleccionar un archivo, abre una conexión hacia esa IP y empuja los datos.
+* **Android envía (Puerto 9000):** La app cuenta con un campo de texto que recuerda la última IP de tu máquina Linux (usando `SharedPreferences`). Al seleccionar un archivo, abre una conexión hacia esa IP y empuja los datos.
 
 ## 🛡️ Características Principales
 * **Protocolo de Metadatos:** Preserva el nombre y extensión original del archivo en ambas direcciones (envía el nombre seguido de un `\n` antes de los bytes binarios).
@@ -47,7 +47,7 @@ NOMBRE=$(basename "$ARCHIVO")
 Bash
 
 #!/bin/bash
-PUERTO="9001"
+PUERTO="9000"
 fuser -k "$PUERTO/tcp" 2>/dev/null
 nc -w 15 -l -p "$PUERTO" | {
     IFS= read -r fname
