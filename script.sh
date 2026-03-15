@@ -1,3 +1,5 @@
+# 1. Generar el README.md actualizado para la v1.1.0
+cat << 'EOF' > README.md
 # pasaArchivo 📱↔️🐧 (v1.1.0)
 
 Una herramienta minimalista de transferencia de archivos bidireccional sobre TCP, construida bajo la filosofía UNIX. Diseñada para mover archivos rápidamente entre un dispositivo Android y una máquina Linux (o entre dos Androids) utilizando *sockets* crudos en la red local.
@@ -80,3 +82,6 @@ while true; do
 done
 sync
 
+EOF
+
+echo "[*] README.md actualizado con la documentación de la v1.1.0."

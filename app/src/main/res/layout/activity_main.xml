@@ -1,21 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_vertical">
 
+    <TextView
+        android:id="@+id/tv_version_puerto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PasaArchivo v1.1.0 | Puerto TCP: 9000"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#555555"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mi IP (Servidor Android):"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_mi_ip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculando..."
+        android:textColor="#2E7D32"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IP Destino (Linux / Android):"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/et_ip_linux"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ej: 172.30.203.102"
+        android:inputType="phone"
+        android:digits="0123456789."
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_escanear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Radar: Buscar dispositivos en puerto 9000"
+        android:backgroundTint="#0277BD"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tv_resultados_red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Equipos detectados aparecerán aquí."
+        android:textSize="12sp"
+        android:textColor="#D32F2F"
+        android:layout_marginBottom="24dp" />
 
     <Button
         android:id="@+id/btn_enviar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enviar archivo a Linux"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Seleccionar y Enviar Archivo"
+        android:textSize="16sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
